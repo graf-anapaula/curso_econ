@@ -28,9 +28,9 @@ Veáse en:
 
 Instala Tidyverse:
 
-> ``` r
-> install.packages('tidyverse')
-> ```
+``` r
+install.packages('tidyverse')
+```
 
 Si ya lo tienes instalado nada más hazlo llamar como:
 
@@ -60,3 +60,49 @@ Te recomiendo los siguientes pasos:
 
 4.  En **Workspace** donde dice Save workspace to .RData when exit
     activa **never**.
+
+## Paquetes
+
+-   Base R: ya instalados cuando bajamos R
+
+-   Contribuited packages: códigos de R que todos pueden bajar y obtener
+    más funciones
+
+Paquetes que vamos a usar:
+
+``` r
+library(dplyr) # Manipular bases de datos
+library(tidyr) # Limpiar informatción
+library(stringr) # Trabajar con strings o texto
+library(lubridate) # Trabajar con fechas y horas
+library(ggplot2) # Paquete más común para hacer gráficas
+library(rmarkdown) # Reportes
+```
+
+Entre otros.
+
+## Tipos de datos
+
+| Datos     | Valores            |
+|-----------|--------------------|
+| Logic     | True, False        |
+| Numeric   | 1, 2, 10000, 1e10  |
+| Integer   | 3L, 4L, 40L        |
+| Character | ‘a’, ‘Hello World’ |
+
+![](images/data-science.png)
+
+-   El proceso de **tidy** consume alrededor del 70% u 80% del tiempo de
+    un *Data Scientist*.
+
+## Workflow
+
+-   Rproject
+
+-   Estructura de carpetas
+
+-   ETL
+
+### Operaciones logicas
+
+![](images/transform-logical.png)
