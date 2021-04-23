@@ -27,13 +27,6 @@
 # existen paquetes base que son los ya instalados cuando instalas R
 # Y los contributed packages que los puedes bajar (necesito internet y lineas de código)
 
-# Asignar variables, para correr la línea de código cntrl + enter
-# <- shortcut: alt + '-'
-x <- 2
-
-
-# Operaciones básicas ====
-
 
 
 
