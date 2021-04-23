@@ -1,0 +1,49 @@
+---
+title: "Curso R"
+author: "Ana Paula Graf"
+date: "30/3/2021"
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Temario
+
+Durante este curso aprenderás diferentes herramientas en lenguaje R enfocado a hacer análisis de datos.
+
+1.  Introducción
+
+    -   ¿Qué es, para qué y por qué R?
+
+2.  Sintáxis básica en R
+
+3.  Visualizaciones
+
+    -   *ggplot2*
+
+4.  API's de manejo de datos (data wrangling)
+
+    -   *dplyr* y *data.table*
+
+    -   Bases de datos relacionales
+
+    -   Manejo de distintos tipos de datos: string, factores, fechas y horas.
+
+5.  Análisis exploratorio de datos
+
+6.  Modelos
+
+7.  Comunicación de resultados (*RMarkdown*)
+
+## Requisitos
+
+Instalar:
+
+-   Instalar R: Entra a <http://cran.r-project.org/bin/windows/base/> y descargar el paquete que corresponda a tu sistema operativo.
+
+-   Instalar Rstudio: Entra a <https://www.rstudio.com/products/rstudio/download/> y descargar el paquete que corresponda a tu sistema operativo.
