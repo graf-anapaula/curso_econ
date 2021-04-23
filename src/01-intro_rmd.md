@@ -90,11 +90,6 @@ Entre otros.
 | Integer   | 3L, 4L, 40L        |
 | Character | ‘a’, ‘Hello World’ |
 
-![](images/data-science.png)
-
--   El proceso de **tidy** consume alrededor del 70% u 80% del tiempo de
-    un *Data Scientist*.
-
 ## Workflow
 
 -   Rproject
@@ -102,6 +97,11 @@ Entre otros.
 -   Estructura de carpetas
 
 -   ETL
+
+![](images/data-science.png)
+
+-   El proceso de **tidy** consume alrededor del 70% u 80% del tiempo de
+    un *Data Scientist*.
 
 ### Operaciones logicas
 
