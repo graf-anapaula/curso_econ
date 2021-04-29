@@ -1,4 +1,5 @@
 # Workflow 
+# Estructuras de carpetas
 
 # Librerias ====
 library(tidyverse)
@@ -80,3 +81,66 @@ select(flights, ends_with("time"))
 
 # En el orden que yo elija seleccionar va ser el orden de mi nueva tabla
 select(flights, dep_time, arr_time, everything())
+
+# MUTATE ====
+flights_sel <- select(flights, year:day, distance, air_time)
+# Air time en minutos y distance en kms y quiero kms/ hora
+flights_sl2 <- mutate(flights_sel, air_time_hr = air_time / 60)
+mutate(flights_sl2, speed = distance / air_time * 60,
+                    speed_alt = distance / air_time_hr)
+# NO agrega, solo calcula
+transmute(flights_sl2, speed = distance / air_time_hr)
+
+
+# SUMMARISE ====
+summarise(flights, delay = mean(dep_delay)) # Encontró missing values
+summarise(flights, delay = mean(dep_delay, na.rm = T))
+
+# Normalmante vamos a acompañar a un summarise con GROUP_BY() 
+# Podemos usar los verbos de DPLYR en datos agrupados, agrupados por
+by_day <- group_by(flights, year, month, day)
+summarise(by_day, delay = mean(dep_delay, na.rm = TRUE))
+
+
+# COMBINING WITH PIPES ====
+# Imaginemos que queremos hacer más de una cosa a la vez, agrupar por destinos,
+# contar cuántas veces se viajó a cada destio, la media de la distancia para llegar
+# a ese destino y después de ello filtrar los valores 
+
+# El código se puede ver de dos formas:
+by_dest <- group_by(flights, dest)
+delay <- summarise(by_dest, count = n(), dist = mean(distance, na.rm = TRUE))
+delay <- filter(delay, count > 20, dest != 'HNL')
+
+# Podemos hacer uso de las un pipe %>% 
+# Shortcut: ctrl + Shift + M (en Windows)
+# En MAC cmd + Shift + M
+# Si te ayuda pronuncia el código como 'then', 'después'
+# LO primero que debo poner es mi base de datos
+delays <- flights %>% 
+  group_by(dest) %>% 
+  summarise(count = n(), dist = mean(distance, na.rm = TRUE)) %>% 
+  filter(count > 20, dest != 'HNL') # HAWAII HONOLU
+
+not_cancelled <- flights %>% 
+  filter(!is.na(dep_time), !is.na(arr_time))
+
+not_cancelled %>% 
+  group_by(year, month, day) %>% 
+  summarise(mean = mean(dep_delay)) # OJO aquí ya no puse na.rm = TRUE ¿Por qué?
+
+not_cancelled %>% 
+  group_by(dest) %>% 
+  summarise(distance_mean = mean(distance),
+            distance_sd = sd(distance)) %>% 
+  arrange(desc(distance_sd))
+  
+
+
+
+
+
+
+
+
+
