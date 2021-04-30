@@ -6,10 +6,9 @@
 # Asignación de variables
 # Short cut: alt + '-'
 x <- 1
-
 2 * x
 
-x/2
+x <- x/2
 
 caracter <- "hello world"
 class(caracter)
@@ -28,7 +27,7 @@ x1
 
 
 # Diferentes dara types
-logic_num <- T
+logic_num <- TRUE
 logic_num
 
 typeof(logic_num)
@@ -39,7 +38,6 @@ typeof(x1)
 
 
 # Jerarquía de operaciones
-
 (1+ 3)/2
 1+ 3/2
 
@@ -47,18 +45,20 @@ typeof(x1)
 sqrt(11)
 mean(x1)
 var(x2)
+sd(x1)
 
 # Operaciones racionales
-2 > 1
-2 >= 1
-2< 1
-2 ==1
-2 != 1
-# And & 
-10 > 20 & 10 < 20
+2 > 1 # TRUE
+2 >= 1 # TRUE
+2 < 1 # FALSE
+2 == 1 # FALSE
+# DIFERENTE DE
+2 != 1 # TRUE
+# And &
+10 > 20 & 10 < 20 # No se cumplen ambas condiciones -> FALSE
 # Or |
-10 > 20 | 10 < 20
-# Not !
+10 > 20 | 10 < 20 # Se cumple por lo menos una condición -> TRUE
+# Not ! # Negación de la afirmación
 (10 == 3)
 !(10 == 3)
  

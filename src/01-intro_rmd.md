@@ -106,3 +106,14 @@ Entre otros.
 ### Operaciones logicas
 
 ![](images/transform-logical.png)
+
+### Funciones dplyr
+
+``` r
+filter() # Seleccionar observaciones por sus valores
+arrange() # Reordenar columnas
+select() # seleccionar distintas columnas
+mutate() # Crear una nueva variable a partir de variables existentes o columnas existentes
+summarise() # Colapsar muchas observacioines en una sola
+group_by() # Group-by-group
+```
