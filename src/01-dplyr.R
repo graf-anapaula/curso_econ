@@ -54,7 +54,6 @@ filter(lista, !is.na(x))
 
 # Usar between
 # %in%
-
 # Más ejercicios con filter
 filter(flights, is.na(dep_time))
 filter(flights, between(month, 1, 5))

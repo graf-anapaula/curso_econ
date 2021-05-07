@@ -104,3 +104,58 @@ mutate() # Crear una nueva variable a partir de variables existentes o columnas 
 summarise() # Colapsar muchas observacioines en una sola
 group_by() # Group-by-group
 ```
+
+# Data Wrangling
+
+Adaptar tus datos para que sean útiles para visualizar y modelar.
+
+### ![](images/data-science-wrangle.png) Import data
+
+``` {.r}
+dataset <- read_csv("data/raw/dataset.csv")
+```
+
+### Tidy
+
+1.  Cada variable es una columna.
+
+2.  Cada observación es un renglón.
+
+3.  Cada variable es un valor tiene su propia celda.
+
+![](images/tidy-1.png)
+
+### Pivoting
+
+Normalmente, nos vamos a encontrar con datos no limpios, por lo que primero hay que adaptar los datos.
+
+\#\#\#\#Pivot longer
+
+![](images/table4a.png) Un caso común en donde hay columnas que en realidad son parte de una variable. Por lo que vamos a utilizar una función:
+
+``` {.r}
+pivot_longer(, names_to = , values_to = )
+```
+
+\#\#\#\#Pivot wider ![](images/table4b.png) Otro caso común es cuando tenemos una observación a través de varios renglones.
+
+``` {.r}
+pivot_longer(names_from = ,values_from = )
+```
+
+### Otras funciones de limpieza
+
+-   Separate
+-   Unite
+
+## Mutating joins
+
+Las bases de datos, entre sus variables, tienen **llaves primarias**, las cuales van a ayudar a distinguir a cada observación como única, como nuestra *clave única* en el ITAM.
+
+**Inner join**
+
+![](images/join-inner.png)
+
+**Outer joins**
+
+![](images/join-outer.png)
